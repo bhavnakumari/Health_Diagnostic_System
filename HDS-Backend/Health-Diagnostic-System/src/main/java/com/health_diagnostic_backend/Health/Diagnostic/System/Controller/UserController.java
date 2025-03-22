@@ -1,11 +1,10 @@
-package com.health_diagnostic_backend.Health.Diagnostic.System;
+package com.health_diagnostic_backend.Health.Diagnostic.System.Controller;
 
 import com.health_diagnostic_backend.Health.Diagnostic.System.Entity.User;
 import com.health_diagnostic_backend.Health.Diagnostic.System.Security.JwtUtil;
 import com.health_diagnostic_backend.Health.Diagnostic.System.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

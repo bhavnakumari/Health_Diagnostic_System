@@ -23,7 +23,7 @@ public class SecurityConfig {
         http
                 .csrf().disable() // Disable CSRF (not recommended for production)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/register", "/auth/login").permitAll() // Allow unauthenticated access
+                        .requestMatchers("/auth/register", "/auth/login","/diagnosis-api/diagnose").permitAll() // Allow unauthenticated access
                         .anyRequest().authenticated() // Require authentication for other requests
                 )
                 .httpBasic(); // Use Basic Authentication for secured endpoints

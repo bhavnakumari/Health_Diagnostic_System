@@ -13,9 +13,17 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PredictedResponse {
+    private String confidence_score;
     private String predicted_disease;
-    private String disease_description;
-    private List<String> precautions;
+    private List<Prediction> alternative_predictions;
+
+    public String getConfidence_score() {
+        return confidence_score;
+    }
+
+    public void setConfidence_score(String confidence_score) {
+        this.confidence_score = confidence_score;
+    }
 
     public String getPredicted_disease() {
         return predicted_disease;
@@ -25,19 +33,11 @@ public class PredictedResponse {
         this.predicted_disease = predicted_disease;
     }
 
-    public String getDisease_description() {
-        return disease_description;
+    public List<Prediction> getAlternative_predictions() {
+        return alternative_predictions;
     }
 
-    public void setDisease_description(String disease_description) {
-        this.disease_description = disease_description;
-    }
-
-    public List<String> getPrecautions() {
-        return precautions;
-    }
-
-    public void setPrecautions(List<String> precautions) {
-        this.precautions = precautions;
+    public void setAlternative_predictions(List<Prediction> alternative_predictions) {
+        this.alternative_predictions = alternative_predictions;
     }
 }

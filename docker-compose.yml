@@ -1,0 +1,43 @@
+
+services:
+
+  flask-api:
+    build: ./Symptom-Analysis-Model
+    container_name: flask-api
+    ports:
+      - "5050:5000"
+    networks:
+      - healthnet
+
+  backend:
+    build: ./HDS-Backend/Health-Diagnostic-System
+    container_name: spring-backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - flask-api
+    networks:
+      - healthnet
+
+  frontend:
+    build: ./HDS-Frontend/health-frontend
+    container_name: react-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    networks:
+      - healthnet
+  
+  mongo:
+    image: mongo:6
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - healthnet
+
+
+networks:
+  healthnet:
+    driver: bridge

@@ -54,9 +54,12 @@ This system helps with **preliminary health assessments** based on symptoms and 
 ```bash
 git clone https://github.com/your-username/health-diagnostic-system.git
 cd health-diagnostic-system
+```
 
 ### 2. Build and Run All Services (Docker Compose)
+```bash
 docker compose up --build
+```
 
 Then access:
 	•	React UI → http://localhost:3000
@@ -78,14 +81,17 @@ Then access:
 🧠 ML Model (Flask)
 	•	POST /predict
 Payload:
+```bash
 { "symptoms": [1, 4, 3, 0, 0, 0, ...] }
-
+```
+```bash
 🧾 Response:
 {
   "predicted_disease": "Acne",
   "confidence_score": "92%",
   "alternative_predictions": [...]
 }
+```
 
 ✨ Future Enhancements
 	•	Role-based access for doctors/patients
